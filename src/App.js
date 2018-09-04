@@ -77,7 +77,7 @@ class WeatherDashboard extends Component {
   componentDidMount() {
     const name = this.props.name;
     const URL =
-      'http://api.openweathermap.org/data/2.5/weather?q=' +
+      'https://api.openweathermap.org/data/2.5/weather?q=' +
       name +
       '&appid=' +
       APIKEY +
@@ -93,7 +93,7 @@ class WeatherDashboard extends Component {
     if (!weatherData) return <div>Loading...</div>;
 
     const weather = weatherData.weather[0];
-    const iconUrl = 'http://openweathermap.org/img/w/' + weather.icon + '.png';
+    const iconUrl = 'https://openweathermap.org/img/w/' + weather.icon + '.png';
     const windSpeed = weatherData.wind.speed * 3.6; // API returns metres/sec
     return (
       <div>
@@ -129,7 +129,7 @@ class FiveDayForecast extends Component {
   componentDidMount() {
     const name = this.props.name;
     const URL =
-      'http://api.openweathermap.org/data/2.5/forecast?q=' +
+      'https://api.openweathermap.org/data/2.5/forecast?q=' +
       name +
       '&appid=' +
       APIKEY +
@@ -172,7 +172,7 @@ class FiveDayForecast extends Component {
 
           {middayPredictions.map((day, index) => {
             const iconUrl =
-              'http://openweathermap.org/img/w/' + day.weather[0].icon + '.png';
+              'https://openweathermap.org/img/w/' + day.weather[0].icon + '.png';
             const date = day.dt_txt.split(' ')[0];
             const temp = day.main.temp;
 
